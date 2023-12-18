@@ -4,7 +4,7 @@ import{S as p}from"./assets/vendor-c9def49e.js";(function(){const t=document.cre
       <img src="${n}" class="gallery-image" data-source="${t}" alt="${i}">
     </a>
   </li>
-`);l.innerHTML=h.join("");const r="../img/sprite-modal-sprite-icon.svg";new p(".gallery a",{captionsData:"alt",captionDelay:250,nav:!0,navText:[`<svg
+`);l.innerHTML=h.join("");const r="./../img/sprite-modal-sprite-icon.svg";new p(".gallery a",{captionsData:"alt",captionDelay:250,nav:!0,navText:[`<svg
     class="lightbox-button-icon-prev"
     width="24"
     height="24"
