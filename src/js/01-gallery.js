@@ -76,6 +76,7 @@ const newGallery = images.map(({ preview, original, description }) => `
   </li>
 ` );
 
+
 gallery.innerHTML = newGallery.join("");
 
 import SimpleLightbox from "simplelightbox";
