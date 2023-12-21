@@ -45,18 +45,16 @@ form.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
-  const emailValue = email.value.trim();
-  const messageValue = textarea.value.trim();
+  const emailValue = email.value;
+  const messageValue = textarea.value;
 
   if (emailValue === '' || messageValue === '') {
-    alert('Будь ласка, заповніть обидва поля форми.');
+    alert('Please fill in both fields in the form.');
     return;
   }
-  
-  else {
     console.log({ email: emailValue, message: messageValue });
     localStorage.removeItem('feedback-form-state');
     form.reset();
-  }
+  
 }
 

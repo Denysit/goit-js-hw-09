@@ -1,3 +1,9 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+import "../css/gallery-styles.css";
+import '../css/custom-style-modal.css';
+import iconsUrl from '../img/sprite-modal-sprite-icon.svg';
+
 
 const images = [
   {
@@ -75,15 +81,8 @@ const newGallery = images.map(({ preview, original, description }) => `
     </a>
   </li>
 ` );
-
-
 gallery.innerHTML = newGallery.join("");
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-import "../css/gallery-styles.css";
-import '../css/custom-style-modal.css';
-import iconsUrl from '../img/sprite-modal-sprite-icon.svg';
 
 
 new SimpleLightbox('.gallery a', {
