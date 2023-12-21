@@ -25,7 +25,8 @@ if (initialData) {
     const initialFormData = JSON.parse(initialData);
     email.value = initialFormData.email;
     textarea.value = initialFormData.message;
-  } catch (e) {
+  }
+  catch (e) {
     console.error('LOCAL STORAGE PARSE ERROR', e);
   }
 }
