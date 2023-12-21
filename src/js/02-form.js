@@ -1,4 +1,3 @@
-
 const section = document.querySelector('section');
 
 const newSection = `<form class="feedback-form" autocomplete="off">
@@ -19,31 +18,30 @@ const form = document.querySelector('.feedback-form');
 const email = form.querySelector('[name="email"]');
 const textarea = form.querySelector('[name="message"]');
 
-
 const initialData = localStorage.getItem('feedback-form-state');
 
 if (initialData) {
-  const initialFormData = JSON.parse(initialData);
-  email.value = initialFormData.email;
-  textarea.value = initialFormData.message;
-};
+  try {
+    const initialFormData = JSON.parse(initialData);
+    email.value = initialFormData.email;
+    textarea.value = initialFormData.message;
+  } catch (e) {
+    console.error('LOCAL STORAGE PARSE ERROR', e);
+  }
+}
 
 form.addEventListener('input', () => {
-
- const formData = {
+  const formData = {
     email: email.value.trim(),
     message: textarea.value.trim()
   };
 
-localStorage.setItem('feedback-form-state', JSON.stringify(formData));
-  
+  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
-
 
 form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
-  
   event.preventDefault();
 
   const emailValue = email.value.trim();
@@ -53,13 +51,11 @@ function handleSubmit(event) {
     alert('Будь ласка, заповніть обидва поля форми.');
     return;
   }
- 
+  
   else {
-    console.log({ email: emailValue, message: messageValue })
+    console.log({ email: emailValue, message: messageValue });
     localStorage.removeItem('feedback-form-state');
     form.reset();
-
-  };
-
-};
+  }
+}
 
