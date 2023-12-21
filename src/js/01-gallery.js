@@ -83,12 +83,14 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import "../css/gallery-styles.css";
 import '../css/custom-style-modal.css';
-import './img/sprite-modal-sprite-icon.svg';
+import iconsUrl from '../img/sprite-modal-sprite-icon.svg';
 
 
-const iconsUrl = './img/sprite-modal-sprite-icon.svg';
-
-new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250,
+new SimpleLightbox('.gallery a', {
+  
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 
 nav: true,
   navText: [
